@@ -4,12 +4,13 @@ class App extends React.Component {
       <div>
         <h1>Slot Machines</h1>
         <hr />
-        <Machine s1="a" s2="b" s3="c"/>
+        <Machine s1="😊" s2="😂" s3="😍"/>
         <hr />
-        <Machine s1="a" s2="a" s3="a"/>
+        <Machine s1="😍" s2="😍" s3="😍"/>
       </div>
     )
   }
 }
 
-ReactDOM.render(<App/>, document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<App />);
