@@ -1,0 +1,12 @@
+.Machine {
+    border: 2px solid black;
+    background: lightblue;
+}
+.winner {
+    color: white;
+    background: green;
+}
+.loser {
+    color: white;
+    background: red;
+}
