@@ -17,12 +17,14 @@ class Pokedex extends Component {
   };
 
   render() {
+
     const props = this.props;
+
     return (
       <div className="Pokedex">
         <h1>Pokedex!</h1>
         <div className="Pokedex-cards">
-          {props.pokemon.slice(0,4).map((p) => (
+          {props.pokemon.map((p) => (
             <Pokecard
               id={p.id}
               name={p.name}
