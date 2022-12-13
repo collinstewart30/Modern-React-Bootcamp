@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Pokedex from './Pokedex';
+import './Pokegame.css';
 
 class Pokegame extends Component {
 
@@ -27,10 +28,18 @@ class Pokegame extends Component {
             hand1.push(randPokemon);
         }
 
+        let exp1 = hand1.reduce((exp, pokemon) => exp + pokemon.base_experience, 0);
+        let exp2 = hand2.reduce((exp, pokemon) => exp + pokemon.base_experience, 0);
+
+        function refreshPage() {
+            window.location.reload(false);
+        }
+
         return (
             <div>
-                <Pokedex pokemon={hand1} />
-                <Pokedex pokemon={hand2} />
+                <button onClick={refreshPage} className="Pokegame-refresh">Click to play again!</button>
+                <Pokedex pokemon={hand1} exp={exp1} isWinner={exp1 > exp2} />
+                <Pokedex pokemon={hand2} exp={exp2} isWinner={exp1 < exp2} />
             </div>
         )
     }
